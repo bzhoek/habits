@@ -25,7 +25,9 @@ for (let i = 0; i < first.daysInMonth; i++) {
 
 let habits = JSON.parse(fs.readFileSync('habits.json'));
 
+let month = first.toLocaleString({month: 'long'});
 let html = page({
+  month: month,
   weekdays: weekdays,
   prefix: prefix,
   days: days,

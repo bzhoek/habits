@@ -1,8 +1,10 @@
 extends layout
 block body
-  h1 April
+  h1 Habit tracker&nbsp;
+    span= month
+
   ol.days
-    li.header April
+    li.header= month
     each val in prefix
       li.prefix
     each val in days
@@ -23,5 +25,8 @@ block body
       li.header= val
       each val in prefix
         li.prefix
-      each val in days
-        li
+      each val, index in days
+        if (prefix.length + index) % 7 > 4
+          li.weekend
+        else
+          li
