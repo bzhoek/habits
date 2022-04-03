@@ -1,0 +1,27 @@
+extends layout
+block body
+  h1 April
+  ol.days
+    li.header April
+    each val in prefix
+      li.prefix
+    each val in days
+      li= val
+
+  ol.weekdays
+    li.header
+    each val, index in weekdays
+      if index < prefix.length
+        li.prefix= val
+      else if index % 7 > 4
+        li.weekend= val
+      else
+        li.weekday= val
+
+  each val in habits
+    ol.days
+      li.header= val
+      each val in prefix
+        li.prefix
+      each val in days
+        li

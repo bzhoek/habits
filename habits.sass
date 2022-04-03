@@ -1,0 +1,33 @@
+@import "reset"
+
+body
+  font-family: "Ubuntu", serif
+
+  h1
+    font-size: 16pt
+    font-weight: 400
+    margin: 8px 8px 16px 16px
+    border: none
+
+  .days, .weekdays
+    display: flex
+    align-content: stretch
+
+
+    li.prefix
+      border: 1px solid lightgray
+      color: gray
+
+    li.header
+      flex: 3 3
+
+    li
+      flex: 1 1
+      border: 1px solid black
+      list-style: none
+      text-align: center
+      height: 2em
+      line-height: 2em
+
+    li.weekend
+      background-color: lightgray
