@@ -23,7 +23,7 @@ for (let i = 0; i < first.daysInMonth; i++) {
   weekdays.push(daynames[(first.weekday - 1 + i) % 7])
 }
 
-let habits = ['Pushups', 'Kanji'];
+let habits = JSON.parse(fs.readFileSync('habits.json'));
 
 let html = page({
   weekdays: weekdays,
