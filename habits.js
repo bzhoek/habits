@@ -24,9 +24,11 @@ for (let i = 0; i < first.daysInMonth; i++) {
 }
 
 let habits = JSON.parse(fs.readFileSync('habits.json'));
-
+let months = ['〇', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '一十', '二十'];
+let title = `${months[first.month]}月`;
 let month = first.toLocaleString({month: 'long'});
 let html = page({
+  title: title,
   month: month,
   weekdays: weekdays,
   prefix: prefix,
