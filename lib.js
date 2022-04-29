@@ -1,13 +1,10 @@
 const pug = require("pug");
 const page = pug.compileFile('month.pug');
 
-const monthlyTracker = (today, habits) => {
-  let first = today.minus({days: today.day - 1})
-
+const monthlyTracker = (first, habits) => {
   let daynames = ['M', 'T', 'W', 'T', 'F', 'S', 'S']
   let weekdays = Array()
 
-  console.log(first.toISODate(), first.weekday)
   let prefix = Array()
   for (let i = 0; i < first.weekday - 1; i++) {
     prefix.push(-i)
