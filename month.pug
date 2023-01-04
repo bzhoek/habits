@@ -1,7 +1,9 @@
 extends layout
 block body
-  h1 Habit tracker&nbsp;
+  h1 習慣
     span= title
+
+  h2= goals.notes
 
   ol.days
     li.header= month
@@ -20,7 +22,7 @@ block body
       else
         li.weekday= val
 
-  each val in habits
+  each val in goals.habits
     ol.days
       li.habit= val
       each val in prefix

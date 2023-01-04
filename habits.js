@@ -9,8 +9,8 @@ let cli = clap.command('habits <year> <month>')
     let today = DateTime.local(parseInt(args[0]), parseInt(args[1]), 1, 0, 0)
     console.log(args, today.toISODate());
 
-    let habits = JSON.parse(fs.readFileSync('habits.json'));
-    let html = monthlyTracker(today, habits)
+    let goals = JSON.parse(fs.readFileSync('goals.json'));
+    let html = monthlyTracker(today, goals)
 
     fs.writeFileSync('month.html', html)
     // console.log(html);

@@ -1,7 +1,7 @@
 const pug = require("pug");
 const page = pug.compileFile('month.pug');
 
-const monthlyTracker = (first, habits) => {
+const monthlyTracker = (first, goals) => {
   let daynames = ['M', 'T', 'W', 'T', 'F', 'S', 'S']
   let weekdays = Array()
 
@@ -27,7 +27,7 @@ const monthlyTracker = (first, habits) => {
     weekdays: weekdays,
     prefix: prefix,
     days: days,
-    habits: habits
+    goals: goals
   });
 }
 
