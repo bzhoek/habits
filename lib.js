@@ -2,7 +2,7 @@ const pug = require("pug");
 const page = pug.compileFile('month.pug');
 
 const monthlyTracker = (first, goals) => {
-  let daynames = ['M', 'T', 'W', 'T', 'F', 'S', 'S']
+  let daynames = ['月', '火', '水', '木', '金', '土', ’日’]
   let weekdays = Array()
 
   let prefix = Array()
