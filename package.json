@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "clap": "^3.1.1",
+    "commander": "^12.0.0",
     "luxon": "^2.3.1",
     "pug": "^3.0.2",
     "sass": "^1.49.11"
