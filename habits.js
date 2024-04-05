@@ -1,15 +1,16 @@
+#!/usr/bin/env node
 const fs = require("fs");
 const clap = require('clap');
 const {DateTime} = require("luxon");
 const {monthlyTracker} = require("./lib");
 
-let cli = clap.command('habits <year> <month>')
+let cli = clap.command('habits <goals> <year> <month>')
   .description('Generate monthly tracker')
   .action(({_, args}) => {
-    let today = DateTime.local(parseInt(args[0]), parseInt(args[1]), 1, 0, 0)
+    let today = DateTime.local(parseInt(args[1]), parseInt(args[2]), 1, 0, 0)
     console.log('args', args, today.toISODate());
 
-    let goals = JSON.parse(fs.readFileSync('goals.json'));
+    let goals = JSON.parse(fs.readFileSync(args[0]));
     let html = monthlyTracker(today, goals)
 
     fs.writeFileSync('month.html', html)
