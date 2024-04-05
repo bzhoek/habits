@@ -5,16 +5,17 @@ const {DateTime} = require("luxon");
 const {monthlyTracker} = require("./lib");
 
 let cli = clap.command('habits <goals> <year> <month>')
-  .description('Generate monthly tracker')
+  .description('Generate monthly habit tracker')
   .action(({_, args}) => {
-    let today = DateTime.local(parseInt(args[1]), parseInt(args[2]), 1, 0, 0)
-    console.log('args', args, today.toISODate());
+    let year = args[1]
+    let month = args[2]
+    let today = DateTime.local(parseInt(year), parseInt(month), 1, 0, 0)
 
     let goals = JSON.parse(fs.readFileSync(args[0]));
     let html = monthlyTracker(today, goals)
-
-    fs.writeFileSync('month.html', html)
-    // console.log(html);
+    let outfile = `month-${year}.${month}.html`
+    fs.writeFileSync(outfile, html)
+    console.log(`Wrote ${outfile}`)
   })
 cli.run()
 
