@@ -5,7 +5,7 @@ https://confettihabits.com/
 Print from Retina resolution for sub-pixel borders.
 
 ```sh
-node habits.js ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/goals.json 2024 04
+node habits.js 2024 04 ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/goals.json 
 ```
 
 ```json

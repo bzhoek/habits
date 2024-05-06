@@ -6,10 +6,10 @@ const {Command} = require('commander');
 
 let cmd = new Command()
   .description('Generate monthly habit tracker')
-  .argument('<goals>', 'path to JSON file with goals')
   .argument('<year>', 'year for month')
   .argument('<month>', 'month in year')
-  .action((json, year, month) => {
+  .argument('<goals>', 'path to JSON file with goals')
+  .action((year, month, json) => {
       let today = DateTime.local(parseInt(year), parseInt(month), 1, 0, 0)
 
       let goals = JSON.parse(fs.readFileSync(json));
