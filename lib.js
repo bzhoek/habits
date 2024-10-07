@@ -1,4 +1,5 @@
 const pug = require("pug");
+const path = require("path");
 const page = pug.compileFile('month.pug');
 
 const monthlyTracker = (first, goals) => {
@@ -31,4 +32,11 @@ const monthlyTracker = (first, goals) => {
   });
 }
 
-module.exports = {monthlyTracker}
+const expandTilde = filepath => {
+  if (filepath[0] === '~') {
+    return path.join(process.env.HOME, filepath.slice(1));
+  }
+  return filepath;
+};
+
+module.exports = {expandTilde, monthlyTracker}
